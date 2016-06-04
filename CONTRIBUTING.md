@@ -17,3 +17,15 @@ the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/pub
 All contributions to this project will be released under the CC0
 dedication. By submitting a pull request, you are agreeing to comply
 with this waiver of copyright interest.
+
+## Development
+
+```bash
+# install
+git clone https://github.com/18F/html-proofer-docker.git
+cd html-proofer-docker
+docker build -t html-proofer .
+
+# run
+docker run html-proofer
+```
