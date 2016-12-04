@@ -5,5 +5,7 @@ RUN apk add --update build-base libxml2-dev libxslt-dev
 RUN gem install nokogiri -- --use-system-libraries
 RUN gem install html-proofer --no-ri --no-rdoc
 
-ENTRYPOINT ["htmlproofer"]
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["--help"]
