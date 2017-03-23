@@ -27,3 +27,14 @@ e.g. those created by a static site builder like [Jekyll](http://jekyllrb.com/) 
 ```bash
 docker run -v /absolute/path/to/dir/:/site 18fgsa/html-proofer /site
 ```
+
+### GitLab CI
+
+You can use this image in GitLab CI, just configure job in `.gitlab-ci.yml` like this:
+
+```yaml
+test:
+  image: 18fgsa/html-proofer:gitlabci
+  script:
+    - htmlproofer _site --empty-alt-ignore
+```
