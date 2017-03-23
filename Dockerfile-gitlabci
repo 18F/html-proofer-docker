@@ -1,4 +1,4 @@
-FROM ruby:2.3-alpine
+FROM ruby:2.4-alpine
 
 # https://github.com/gliderlabs/docker-alpine/issues/53#issuecomment-125671731
 RUN apk add --update build-base libxml2-dev libxslt-dev libcurl
