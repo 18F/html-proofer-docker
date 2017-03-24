@@ -24,10 +24,5 @@ with this waiver of copyright interest.
 # install
 git clone https://github.com/18F/html-proofer-docker.git
 cd html-proofer-docker
-docker build -t html-proofer .
-
-# run
-docker run html-proofer
-# test an actual file
-docker run -v "$(pwd)/test.html:/test.html" html-proofer /test.html
+./test/run.sh
 ```
