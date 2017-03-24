@@ -28,4 +28,6 @@ docker build -t html-proofer .
 
 # run
 docker run html-proofer
+# test an actual file
+docker run -v "$(pwd)/test.html:/test.html" html-proofer /test.html
 ```
