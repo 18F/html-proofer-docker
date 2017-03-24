@@ -34,7 +34,7 @@ You can use this image in GitLab CI, just configure job in `.gitlab-ci.yml` like
 
 ```yaml
 test:
-  image: 18fgsa/html-proofer:gitlabci
+  image: 18fgsa/html-proofer:gitlab-ci
   script:
     - htmlproofer _site --empty-alt-ignore
 ```

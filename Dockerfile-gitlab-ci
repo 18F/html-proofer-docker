@@ -1,0 +1,6 @@
+FROM 18fgsa/html-proofer
+
+# workaround for GitLab CI
+# https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues/1421
+ENTRYPOINT []
+CMD []
