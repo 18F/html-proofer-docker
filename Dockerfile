@@ -2,14 +2,16 @@ FROM ruby:2.4-alpine
 
 RUN echo 'gem: --no-document' >> /etc/gemrc
 
-# https://github.com/gliderlabs/docker-alpine/issues/53#issuecomment-125671731
+# needed at runtime
 RUN apk add --no-cache \
-  build-base \
-  libcurl \
-  libxml2-dev \
-  libxslt-dev
+  libcurl
 
-RUN gem install html-proofer
+RUN apk add --no-cache --virtual build-dependencies \
+  build-base \
+  libxml2-dev \
+  libxslt-dev \
+  && gem install html-proofer \
+  && apk del build-dependencies
 
 ENTRYPOINT ["htmlproofer"]
 CMD ["--help"]
