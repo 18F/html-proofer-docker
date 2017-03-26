@@ -1,0 +1,1 @@
+This directory is a workaround for [GitLab CI](https://about.gitlab.com/gitlab-ci/) [not supporting "non-shell `ENTRYPOINT`s"](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues/1421). The GitLab CI-specific Dockerfile needs to be in a different directory than the canonical one due to [a limitation of Docker Hub](https://github.com/docker/hub-feedback/issues/292).
