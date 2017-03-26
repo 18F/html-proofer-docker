@@ -13,5 +13,7 @@ RUN apk add --no-cache --virtual build-dependencies \
   && gem install html-proofer \
   && apk del build-dependencies
 
-ENTRYPOINT ["htmlproofer"]
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["--help"]
