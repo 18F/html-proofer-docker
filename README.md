@@ -12,20 +12,20 @@ docker run 18fgsa/html-proofer
 
 This will print out the usage instructions. Arguments for [the `htmlproofer` CLI](https://github.com/gjtorikian/html-proofer#using-on-the-command-line) can then be appended to the command. Note that **it's not (yet) recommended this be used against live sites** due to [this issue](https://github.com/gjtorikian/html-proofer/issues/334).
 
-### Single file
-
-You will need to [mount the file as a data volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/#mount-a-host-file-as-a-data-volume) so it's available in the container, like so:
-
-```bash
-docker run -v /absolute/path/to/file.html:/file.html 18fgsa/html-proofer /file.html
-```
-
 ### Directory of files
 
-e.g. those created by a static site builder like [Jekyll](http://jekyllrb.com/) or [Hugo](https://gohugo.io/). You will need to [mount the directory as a data volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/#mount-a-host-directory-as-a-data-volume) so it's available in the container, like so:
+e.g. those created by a static site builder like [Jekyll](http://jekyllrb.com/) or [Hugo](https://gohugo.io/). You will need to [mount the directory as a data volume](https://docs.docker.com/storage/volumes/#start-a-container-with-a-volume) so it's available in the container, like so:
 
 ```bash
-docker run -v /absolute/path/to/dir/:/site 18fgsa/html-proofer /site
+docker run -v /absolute/path/to/site/:/mounted-site 18fgsa/html-proofer /mounted-site
+```
+
+### Single file
+
+You can also mount a single file, like so:
+
+```bash
+docker run -v /absolute/path/to/file.html:/mounted-file.html 18fgsa/html-proofer /mounted-file.html
 ```
 
 ### GitLab CI
